@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user</title>
+</head>
+<body>
+<h2>Редактирование пользователя</h2>
+
+<form th:method="POST" th:action="@{/{id}(id=${user.getId()})}" th:object= "${user}">
+    <label for="name">Имя: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <label for="name">Фамилия: </label>
+    <input type="text" th:field="*{secondName}" id="secondName">
+    <label for="email">Почта: </label>
+    <input type="text" th:field="*{email}" id="email">
+    <br>
+    <br>
+    <input type="submit" value="Изменить">
+
+</form>
+</body>
+</html>
